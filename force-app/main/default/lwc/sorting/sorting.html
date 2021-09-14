@@ -1,7 +1,7 @@
 <!--
  - @author aidan@nebulaconsulting.co.uk
  - @date 13/09/2021
- - @description (if required)
+ - @description Datatable with sorting, from the LWC component library. Modified to externalise the sorting part
  -->
 
 <!-- Sorting -->
@@ -11,9 +11,9 @@
             columns={columns}
             data={data}
             hide-checkbox-column
-            default-sort-direction={defaultSortDirection}
-            sorted-direction={sortDirection}
-            sorted-by={sortedBy}
-            onsort={onHandleSort}>
+            default-sort-direction={dataTableSorter.defaultSortDirection}
+            sorted-direction={dataTableSorter.sortDirection}
+            sorted-by={dataTableSorter.sortedBy}
+            onsort={dataTableSorter.sortData}>
     </lightning-datatable>
 </template>
