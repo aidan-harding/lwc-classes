@@ -1,3 +1,8 @@
+/**
+ * @author aidan@nebulaconsulting.co.uk
+ * @date 16/09/2021
+ */
+
 import { LightningElement } from 'lwc';
 import {DatatableSorter} from "c/datatableSorter";
 
@@ -25,7 +30,7 @@ const columns = [
     { label: 'Email', fieldName: 'email', type: 'email' },
 ];
 
-export default class DemoApp extends LightningElement {
+export default class SortedDatatable extends LightningElement {
     data = data;
     columns = columns;
 
