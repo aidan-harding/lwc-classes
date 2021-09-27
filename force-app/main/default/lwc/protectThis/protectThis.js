@@ -8,13 +8,13 @@
  * to other methods or properties of the class. See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes#binding_this_with_prototype_and_static_methods
  */
 
-function protectThis(object) {
-    Object.getOwnPropertyNames( Object.getPrototypeOf(object) )
-        .filter(maybeFunctionName => typeof object[maybeFunctionName] === 'function')
+function protectThis(objectInstance) {
+    Object.getOwnPropertyNames( Object.getPrototypeOf(objectInstance) )
+        .filter(maybeFunctionName => typeof objectInstance[maybeFunctionName] === 'function')
         .forEach(function(functionName) {
-            const initialFunctionDefinition = object[functionName];
-            object[functionName] = function()  {
-                return initialFunctionDefinition.apply(object, arguments);
+            const initialFunctionDefinition = objectInstance[functionName];
+            objectInstance[functionName] = function()  {
+                return initialFunctionDefinition.apply(objectInstance, arguments);
             }
         });
 }

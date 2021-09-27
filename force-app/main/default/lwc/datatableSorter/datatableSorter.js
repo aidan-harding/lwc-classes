@@ -31,7 +31,7 @@ export class DatatableSorter {
     }
 
     sortData(event) {
-        const { fieldName: fieldName, sortDirection } = event.detail;
+        const { fieldName, sortDirection } = event.detail;
         const cloneData = [...this.parent[this.dataFieldName]];
 
         cloneData.sort(this.sortBy(fieldName, sortDirection === 'asc' ? -1 : 1));
